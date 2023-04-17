@@ -9,6 +9,7 @@ settings = Settings(_env_file='.env', _env_file_encoding='utf-8')
 
 """TODO Вынести в DI контейнер"""
 ipinfoprovider = IpStackComProvider(settings)
+# ipinfoprovider.get_ip_info('46.191.186.238')
 
 @app.get("/healcheck")
 async def healcheck():

@@ -5,11 +5,19 @@ from config import Settings
 
 from contracts import AbstractIpInfoProvider
 
-class IpStackComProvider(AbstractIpInfoProvider, Settings):
+class IpStackComProvider(AbstractIpInfoProvider):
 
+    protocol: str = 'https'
     url: str = 'api.ipstack.com'
-    protocol: str = 'http'
+    settings: Settings
 
-    @classmethod
+    def __init__(self, settings: Settings):
+        self.protocol = 'http'
+        self.url = 'api.ipstack.com'
+        self.settings = settings
+
     def get_ip_info(self, ip: str):
-        return requests.get(f"{self.protocol}://'{self.url}'/'{ip}'?access_key='{Settings.ip_stack_com_access_key}")
+        try:
+            return requests.get(f"{self.protocol}://'{self.url}'/'{ip}'?access_key='{self.settings.ip_stack_com_access_key}")
+        except Exception as e:
+            raise e
