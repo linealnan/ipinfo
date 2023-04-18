@@ -4,6 +4,7 @@ import requests
 from config import Settings
 
 from contracts import AbstractIpInfoProvider
+from models import IpstackComResponse
 
 class IpStackComProvider(AbstractIpInfoProvider):
 
@@ -16,8 +17,8 @@ class IpStackComProvider(AbstractIpInfoProvider):
         self.url = 'api.ipstack.com'
         self.settings = settings
 
-    def get_ip_info(self, ip: str):
-        try:
-            return requests.get(f"{self.protocol}://'{self.url}'/'{ip}'?access_key='{self.settings.ip_stack_com_access_key}")
+    def get_ip_info(self, ip: str)->IpstackComResponse:
+        try:    
+            return requests.get(f"{self.protocol}://{self.url}/{ip}?access_key={self.settings.ip_stack_com_access_key}")
         except Exception as e:
             raise e

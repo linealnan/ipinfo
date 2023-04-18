@@ -4,4 +4,5 @@ class AbstractIpInfoProvider(metaclass=ABCMeta):
 
     @abstractmethod
     def get_ip_info(self, ip: str):
+        """Получение данных IP адреса"""
         pass
