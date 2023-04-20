@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from config import Settings
 from ipstack_com_provider import IpStackComProvider
-from models import IpstackComResponse
 
 app = FastAPI()
 
