@@ -2,7 +2,7 @@ version: '3.5'
 services:
 
   ipinfo_backend:
-    container_name: scso-backend
+    container_name: ipinfo-backend
     restart: always
     volumes:
       - logs:/logs

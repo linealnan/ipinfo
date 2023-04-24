@@ -5,7 +5,16 @@
 -------------------------
 
 - запустить venv:
-    <python3 -m venv virtual/environment/>
+```bash
+python3 -m venv virtual/environment/
+```
+
+- Запустите необходимые сервисы:
+```bash
+docker-compose -f docker/docker-compose.dev.yml up -d
+```
 
 - запустить сервинг следцующей командой:
-    <uvicorn main:app --reload>
+```bash
+    uvicorn main:app --reload
+```
