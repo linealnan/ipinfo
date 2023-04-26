@@ -14,7 +14,7 @@ python3 -m venv virtual/environment/
 docker-compose -f docker/docker-compose.dev.yml up -d
 ```
 
-- запустить сервинг следцующей командой:
+- запустить сервинг следующей командой:
 ```bash
     uvicorn main:app --reload
 ```

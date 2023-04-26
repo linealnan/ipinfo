@@ -1,4 +1,13 @@
+import enum
 from pydantic import BaseModel
+
+class IpType(enum.Enum):
+    SOME_TYPE='SOME_TYPE'
+
+class IpLanguages(BaseModel):
+    code: str
+    name: str
+    native: str
 
 class IpLanguages(BaseModel):
     code: str
@@ -12,7 +21,7 @@ class IpLocation(BaseModel):
 
 class IpstackComResponse(BaseModel):
    ip: str
-   type: str # @TODO типизировать енамом
+   type: IpType
    continent_code: str
    continent_name: str
    country_code: str
