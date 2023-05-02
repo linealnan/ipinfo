@@ -1,8 +1,8 @@
 """Add IpInfo table
 
-Revision ID: 545bbc88cfbd
+Revision ID: 1ca1957db729
 Revises: 
-Create Date: 2023-04-26 19:43:50.858836
+Create Date: 2023-04-26 19:55:16.421047
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '545bbc88cfbd'
+revision = '1ca1957db729'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,7 +21,7 @@ def upgrade() -> None:
     op.create_table('ip_info',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('ip', sa.String(), nullable=True),
-    sa.Column('ip_type_enum', sa.Enum('SOME_TYPE', name='ip_type', metadata=MetaData(), create_constraint=True), nullable=False),
+    sa.Column('ip_type_enum', sa.Enum('SOME_TYPE', name='ip_type', create_constraint=True), nullable=False),
     sa.Column('continent_code', sa.String(), nullable=False),
     sa.Column('continent_name', sa.String(), nullable=False),
     sa.Column('country_code', sa.String(), nullable=False),

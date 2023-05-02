@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from config import Settings
 from ipstack_com_provider import IpStackComProvider
 
-app = FastAPI()
+app = FastAPI(title = "IPinfo")
 
 """TODO Вынести в DI контейнер"""
 settings = Settings(_env_file='.env', _env_file_encoding='utf-8')

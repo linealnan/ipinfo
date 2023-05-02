@@ -9,11 +9,6 @@ class IpLanguages(BaseModel):
     name: str
     native: str
 
-class IpLanguages(BaseModel):
-    code: str
-    name: str
-    native: str
-
 class IpLocation(BaseModel):
     geoname_id: int
     capital: str

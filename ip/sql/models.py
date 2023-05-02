@@ -1,18 +1,10 @@
-from sqlalchemy import Boolean, Column, Float, ForeignKey, Integer, String
+from sqlalchemy import Boolean, Column, Float, Integer, String
 from sqlalchemy.orm import relationship, mapped_column
 from sqlalchemy import Enum
 
-from models import IpLocation, IpType
+from models import IpLocation, IpType, IpTypeEnum
 
-from .database import Base
-
-IpTypeEnum: Enum = Enum(
-    IpType,
-    name="ip_type",
-    create_constraint=True,
-    metadata=Base.metadata,
-    validate_strings=True,
-)
+from database import Base
 
 class IpInfo(Base):
     __tablename__ = "ip_info"
@@ -36,3 +28,4 @@ class IpInfo(Base):
     country_flag_emoji_unicode = Column(String, nullable=False)
     calling_code = Column(Integer, nullable=False)
     is_eu = Column(Boolean, nullable=False)
+    
