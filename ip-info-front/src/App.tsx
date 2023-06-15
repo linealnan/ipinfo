@@ -1,13 +1,18 @@
-import logo from './logo.svg';
+import React from 'react';
+
+import IpInfoForm from './components/IpInfoForm';
+
 import './App.css';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <p>
-          Ip Info
+          IpInfo
         </p>
+        <IpInfoForm></IpInfoForm>
       </header>
     </div>
   );
