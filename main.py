@@ -15,6 +15,6 @@ ipinfoprovider = IpStackComProvider(settings)
 async def healcheck():
     return {"message": "i'm healthy"}
 
-@app.get("/ipinfo/{ip}")
+@app.get("/api/v1/ipinfo/{ip}")
 def get_ip_info(ip: str):
     return ipinfoprovider.get_ip_info(ip).json()
